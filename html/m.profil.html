@@ -1,0 +1,82 @@
+<div class="modal-dialog modal-dialog-centered">
+  <div class="modal-content">
+    <div class="modal-header d-flex justify-content-between">
+      <div></div>
+      <h3 class="modal-title">Modifer mon profil</h3>
+      <div>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+    </div>
+    <div class="modal-body">
+      <div id="cinvalidMessage" class="alert text-center m-0" role="alert" style="color:red;"></div>
+      <form id="formProfil" method="post" class="form">
+        <h5 class="mb-2"><i class="fas fa-angle-right"></i> Informations personnelles :</h5>
+        <br />
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <input type="text" class="form-control" id="FnomMED" name="FnomMED" placeholder="Nom">
+          </div>
+          <div class="form-group col-md-6">
+            <input type="text" class="form-control" id="FprenomMED" name="FprenomMED" placeholder="Prénom">
+          </div>
+        </div>
+        <div class="form-row mb-3">
+          <label for="datenaissance" class="col-4 col-form-label">Date de naissance</label>
+          <div class="col-8">
+            <input class="form-control" type="date" id="FdatenaissanceMED" name="FdatenaissanceMED">
+          </div>
+        </div>
+
+        <div class="input-group rounded mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text"><i class="fas fa-envelope"></i></i></span>
+          </div>
+          <input type="email" class="form-control" id="FemailMED" name="FemailMED" placeholder="Email">
+        </div>
+
+        <div class="input-group rounded mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text"><i class="fas fa-key"></i></i></span>
+          </div>
+          <input type="password" class="form-control" id="FpasswordMED" name="FpasswordMED" placeholder="Mot de passe">
+        </div>
+
+        <div class="form-row mb-3">
+          <div class="input-group rounded col-md-6">
+            <div class="input-group-prepend">
+              <span class="input-group-text"><i class="fas fa-phone-alt"></i></span>
+            </div>
+            <input type="tel" class="form-control" id="FtelephoneMED" name="FtelephoneMED" placeholder="Telephone" pattern="[0-9]{10}">
+          </div>
+          <div class="input-group rounded col-md-6">
+            <div class="input-group-prepend">
+              <span class="input-group-text"><i class="fas fa-mobile-alt"></i></span>
+            </div>
+            <input type="tel" class="form-control" id="FmobileMED" name="FmobileMED" placeholder="Mobile" pattern="[0-9]{10}">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <input type="text" class="form-control" id="FadresseMED" name="FadresseMED" placeholder="Adresse">
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <input type="text" class="form-control" id="FvilleMED" name="FvilleMED" placeholder="Ville">
+          </div>
+          <div class="form-group col-md-6">
+            <input type="text" class="form-control" id="FcodepostalMED" name="FcodepostalMED" placeholder="Code Postal">
+          </div>
+        </div>
+
+        <br />
+
+        <div class="text-center">
+          <button id="sumbitMED" type="submit" class="btn btn-primary" value="soumettre" name="soumettre">Sauvegarder</button>
+        </div>
+      </form>
+      <br />
+    </div>
+  </div>
+</div>

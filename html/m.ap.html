@@ -1,0 +1,177 @@
+<div class="modal-dialog modal-dialog-centered">
+  <div class="modal-content">
+    <div class="modal-header d-flex justify-content-between">
+      <div></div>
+      <h3 id="titrepatient" class="modal-title">Ajouter un patient</h3>
+      <div>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+    </div>
+    <div class="modal-body">
+      <div id="cinvalidMessage" class="alert text-center m-0" role="alert" style="color:red;"></div>
+      <form id="formAjoutPatient" method="post" action="./bdpatient.php" class="form" enctype="multipart/form-data">
+        <h5 class="mb-2"><i class="fas fa-angle-right"></i> <span id="minfoperso">
+          Informations personnelles</span> :
+          </h5>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <input type="text" class="form-control" name="nom" id="nom" placeholder="Nom">
+          </div>
+          <div class="form-group col-md-6">
+            <input type="text" class="form-control" name="prenom" id="prenom" placeholder="Prénom">
+          </div>
+        </div>
+        <select class="custom-select mb-3" name="sexe" id="sexe">
+          <option selected>Sexe</option>
+          <option id="H" value="Homme"><i class="fas fa-mars"></i> Homme</option>
+          <option id="F" value="Femme"><i class="fas fa-venus"></i> Femme</option>
+        </select>
+        <div class="form-row mb-3">
+          <label id="labeldatenaiss" for="datenaissance" class="col-4 col-form-label">
+            Date de naissance</label>
+          <div class="col-8">
+              <input class="form-control" type="date" name="datenaissance" id="datenaissance" value="2018-07-22" min="1930-01-01" max="2020-01-01">
+          </div>
+        </div>
+        <div class="input-group rounded mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text"><i class="fas fa-envelope"></i></i></span>
+          </div>
+          <input type="email" class="form-control" name="email" id="email" placeholder="Email">
+        </div>
+
+        <div class="form-row mb-3">
+          <div class="input-group rounded col-md-6">
+            <div class="input-group-prepend">
+              <span class="input-group-text"><i class="fas fa-phone-alt"></i></span>
+            </div>
+            <input type="tel" class="form-control" name="telephone" id="telephone" placeholder="Telephone" pattern="[0-9]{10}">
+          </div>
+          <div class="input-group rounded col-md-6">
+            <div class="input-group-prepend">
+              <span class="input-group-text"><i class="fas fa-mobile-alt"></i></span>
+            </div>
+            <input type="tel" class="form-control" id="mobile" name="mobile" placeholder="Mobile" pattern="[0-9]{10}">
+          </div>
+        </div>
+
+        <div class="form-group">
+            <input type="text" class="form-control" id="adresse" name="adresse" placeholder="Adresse">
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <input type="text" class="form-control" name="ville" id="ville" placeholder="Ville">
+          </div>
+          <div class="form-group col-md-6">
+            <input type="number" class="form-control" name="codepostal" id="codepostal" step=1 pattern="[0-9]{5}" placeholder="Code Postal">
+          </div>
+        </div>
+
+        <br />
+        <hr sytle="color:rgb(200,200,200);">
+        <h5 class="mb-2"><i class="fas fa-angle-right"></i> <span id="minfomed">Informations médicales</span> :
+        </h5>
+
+        <div class="form-row mb-3">
+          <div class="input-group col-md-6">
+            <input type="number" class="form-control" name="poids" id="poids" placeholder="Poids" step=0.1 aria-label="Poids">
+            <div class="input-group-append">
+              <span class="input-group-text">kg</span>
+            </div>
+          </div>
+          <div class="input-group col-md-6">
+            <input type="number" class="form-control" name="taille" id="taille" placeholder="Taille" step=0.01 aria-label="Taille">
+            <div class="input-group-append">
+              <span class="input-group-text">m</span>
+            </div>
+          </div>
+        </div>
+
+        <input type="text" class="form-control mb-3" name="groupesanguin" id="groupesanguin" placeholder="Groupe sanguin">
+
+        <div class="input-group pl-0 mb-4">
+          <input type="number" class="form-control" name="frequencecardiaque" id="frequencecardiaque" placeholder="Fréquence cardiaque" aria-label="Fréquence cardiaque">
+          <div class="input-group-append">
+            <span class="input-group-text">bpm</span>
+          </div>
+        </div>
+        <div class="form-group mb-4">
+          <label for="Pathologies"><i class="fas fa-notes-medical icon-color"></i> <span id="labelpatho">Pathologies (séparées par un point-virgule) :</span></label>
+          <textarea class="form-control" id="Pathologies" name="Pathologies" rows="3"></textarea>
+        </div>
+
+        <fieldset style="border:1px solid rgb(200,200,200);border-radius:10px;padding:1%;">
+          <legend style="font-size:15px;"><i class="far fa-hospital icon-color"></i> <span id="labelhospi">Hospitalisations</span>
+            <span id="nbHospi" class="badge badge-pill badge-primary">1</span>
+          </legend>
+          <input name="inputnbHospi" id="inputnbHospi" valu="1" style="display:none;">
+          <div id="listeHospi">
+            <div class="form-group">
+              <input type="text" class="form-control raisonmedicale" name="raisonmedicale" id="raisonmedicale" placeholder="Raison médicale">
+            </div>
+            <div class="form-row mb-3">
+              <label id="labeldateentree" for="dateentree" class="col-4 col-form-label labeldateentree">Date d'entrée</label>
+              <div class="col-8">
+                <input class="form-control" type="date" name="dateentree" id="dateentree" min="1930-01-01" max="2020-01-01">
+              </div>
+            </div>
+            <div class="form-row mb-3">
+              <label id="labeldatesortie" for="datesortie" class="col-4 col-form-label labeldatesortie">Date de sortie</label>
+              <div class="col-8">
+                <input class="form-control" type="date" name="datesortie" id="datesortie" min="1930-01-01" max="2020-01-01">
+              </div>
+            </div>
+            <div class="text-center">
+              <button id="ajoutformhospi" type="button" class="btn btn-sm btn-outline-dark text-center">
+                <i class="fa fa-plus color-icon" aria-hidden="true"></i> 
+                <span id="textbajouthospi">Ajouter une hospitalisation</span>
+              </button>
+            </div>
+          </div>
+        </fieldset>
+
+        <br />
+
+        <fieldset style="border:1px solid rgb(200,200,200);border-radius:10px;padding:1%;">
+          <legend style="font-size:15px;"><i class="fas fa-syringe icon-color"></i>
+            <span id="labelvacci">Vaccinations</span>
+              <span id="nbVacci" class="badge badge-pill badge-primary">1</span>
+          </legend>
+          <input name="inputnbVacci" id="inputnbVacci" valu="1" style="display:none;">
+          <div id="listeVacci">
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <input type="text" class="form-control nomvaccin" name="nomvaccin" id="nomvaccin" placeholder="Nom vaccin">
+              </div>
+              <div class="form-group col-md-6">
+                <input type="number" class="form-control dose" name="dose" id="dose" step=0.01 placeholder="Dose">
+              </div>
+            </div>
+            <div class="form-row mb-3">
+              <label id="labeldatevaccin" for="datevaccin" class="col-4 col-form-label labeldatevaccin">Date du vaccin</label>
+              <div class="col-8">
+                <input class="form-control" type="date" name="datevaccin" id="datevaccin" min="1930-01-01" max="2020-01-01">
+              </div>
+            </div>
+            <div class="text-center">
+              <button id="ajoutformvacci" type="button" class="btn btn-sm btn-outline-dark">
+                <i class="fa fa-plus color-icon" aria-hidden="true"></i> 
+                <span id="textbajoutvacci">Ajouter une vaccination</span>
+              </button>
+            </div>
+          </div>
+        </fieldset>
+
+        <br />
+        <div class="text-center" ;>
+          <button id="validerpatient" type="submit" class="btn btn-success" value="soumettre" name="soumettre">
+            <i class="fas fa-plus"></i> <span id="textbuttonAjout">Ajouter</span>
+        </button>
+        </div>
+      </form>
+      <br />
+    </div>
+  </div>
+</div>

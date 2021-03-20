@@ -1,0 +1,235 @@
+body {
+  overflow: auto;
+}
+.bloc {
+  border-radius: 15px;
+  background-color: white;
+}
+#container {
+  padding-top: 0px;
+}
+.section::before {
+  position: absolute;
+  content: '';
+  z-index: -1;
+  width: 100%;
+  height: 55%;
+  opacity: 90%;
+  background-position: 100% 25%;
+  background-image: url(./../images/background.jpg);
+}
+.class-footer {
+  font-size: 15px;
+  padding: 1px;
+}
+.navbar {
+  min-height: 50px;
+}
+.flag {
+  height: 75%;
+  opacity: 65%;
+  cursor: pointer;
+  margin-top: 3px;
+}
+.flag:hover {
+  opacity: 100%;
+  transition-duration: 300ms;
+}
+.menu-bar {
+  background-color: rgba(20, 32, 41, 0.6);
+}
+@media (max-width: 1199px) {
+  .bloc-blanc2 {
+    margin-top: 15px;
+    margin-bottom: 70px;
+  }
+  .bloc-login {
+    margin-bottom: 70px;
+  }
+  .bloc-index {
+    margin-bottom: 70px;
+  }
+  .slide-text {
+    margin-right: -20px;
+  }
+}
+@media (max-width: 1700px) {
+  .bloc-formulaire {
+    margin-bottom: 70px;
+  }
+}
+@media (max-width: 1470px) {
+  #divInfo,
+  #divRequire {
+    height: 340px;
+  }
+}
+.tooltip-inner {
+  background-color: rgb(1, 13, 40);
+  color: white;
+}
+
+
+/* Login */
+#forgot, #forgot:active, #forgot:visited {
+  color: rgb(1, 13, 40);
+  font-size: 15px;
+}
+
+/* Désactiver les flêches dans les input number */
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/* Firefox */
+input[type=number] { -moz-appearance: textfield; }
+.chosen {
+  background-color: #FAFCFF;
+  box-shadow: -1px 3px 6px 1px rgba(1, 13, 40, .2);
+}
+.chosen:hover {
+  background-color: #FAFCFF;
+  box-shadow: -1px 3px 6px 1px rgba(1, 13, 40, .2);
+}
+.notchosen {
+  background-color: rgb(248, 249, 250);
+  opacity: 70%;
+}
+.clicked:after {
+  background: none repeat scroll 0 0 transparent;
+  bottom: 0;
+  content: "";
+  display: block;
+  height: 0;
+  left: 0;
+  position: absolute;
+  background: rgb(1, 13, 40);
+  transition: height 0.7s ease 0s, left 0.7s ease 0s;
+  width: 4px;
+}
+.sliding:after {
+  content: '';
+  display: block;
+  width: 4px;
+  height: 0;
+  background: transparent;
+  visibility: hidden;
+  transition: height .7s ease, background-color .7s ease;
+}
+.sliding.clicked:after {
+  visibility: visible;
+  height: 100%;
+  background: rgba(1, 13, 40, .8);
+}
+h4, h5 {
+  letter-spacing: 1px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  color: rgba(1, 13, 40, .8);
+}
+.groupcheckbox {
+  opacity: 0;
+  position: absolute;
+}
+.able td {
+  padding: 1%;
+  cursor: pointer;
+}
+tbody tr:hover {
+  background-color: #FAFCFF;
+  box-shadow: -3px 3px 6px 3px rgba(1, 13, 40, .2);
+  transition-duration: 50ms;
+}
+.btrash, .bsetprofil {
+  background-color: rgb(247, 247, 247);
+  color: rgb(80, 80, 80);
+}
+.color-icon {
+  color: rgb(80, 80, 80);
+}
+.labeldescription {
+  font-weight: bold;
+}
+.card-body p {
+  margin-bottom: 5px;
+}
+.btnstyle {
+  background-color: white;
+  color: rgb(80, 80, 80);
+}
+.card-header {
+  height: 60px;
+}
+thead {
+  background-color: rgb(62, 71, 92);
+  color: white;
+}
+.icon-color {
+  color: rgb(150, 150, 150);
+}
+.esp {
+  width: 15px !important;
+  display: inline-block;
+}
+.valeurBD {
+  text-transform: capitalize;
+}
+#blogout, #blogout:active, #blogout:visited {
+  color: white;
+}
+#rondTrash {
+  border: 1px solid rgb(249, 249, 249);
+  background-color: rgb(250, 250, 250);
+  margin-top: -30px;
+  height: 60px;
+  width: 60px;
+  border-radius: 50px;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+}
+.bYes {
+  width: 50%;
+  height: 50px;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 3px;
+  background-color: #E75858;
+  text-transform: uppercase;
+  font-size: 13px;
+  letter-spacing: 1.5px;
+  color: white;
+}
+.bYes:hover, .bNo:hover {
+  font-size: 14px;
+  font-weight: bold;
+  color: white;
+}
+.bNo {
+  float: left;
+  width: 50%;
+  height: 50px;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+  border-bottom-left-radius: 3px;
+  background-color: rgb(150, 150, 150);
+  text-transform: uppercase;
+  font-size: 13px;
+  letter-spacing: 1.5px;
+  color: white;
+}
+.modal-content {
+  border: 0px;
+}
+.modal-footer {
+  background-color: rgb(246, 250, 253);
+  border: 0px;
+}
+.modal-header {
+  border: 0px;
+  padding-bottom: 5px;
+}
+.bAide, .bAide:active, .bAdie:visited{
+  color:white;
+}
