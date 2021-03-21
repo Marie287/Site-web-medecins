@@ -1,6 +1,6 @@
 # Site-web-medecins
 
-**Site web pour la gestion des patients appartenant associés à un médecin**
+**Site web pour la gestion des patients associés à un médecin**
 
 Le médecin se connecte avec son adresse mail et son mot de passe, et il pourra ainsi accéder à la liste de ses patients. 
 Il aura également accès aux informations personnelles et médicales de chacun, et la possibilité de modifier ces informations.
